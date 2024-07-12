@@ -1,0 +1,74 @@
+.button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  gap: 4px;
+  animation: move 2s infinite ease;
+  float: right;
+}
+
+.button:hover {
+  animation: move 4s infinite ease;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.round {
+  width: 6px;
+  height: 6px;
+  background: #252422;
+  border-radius: 50%;
+}
+
+.line {
+  display: flex;
+  gap: 4px;
+}
+
+.two {
+  transform: translateX(10px);
+}
+
+.three {
+  transform: translateX(20px);
+}
+
+.four {
+  transform: translateX(30px);
+}
+
+.five {
+  transform: translateX(20px);
+}
+
+.six {
+  transform: translateX(10px);
+}
+
+
+/* .slider{
+    position: absolute;
+    right:50px;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    height:100vh;
+    justify-content: end;
+    align-items: center;
+    
+} */

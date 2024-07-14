@@ -16,7 +16,7 @@ const Contact = () => {
 
 
 
-                <div className="w-full lg:max-w-[800px] w-lvw backdrop-blur-sm bg-white/70 rounded-lg shadow-md p-6 animate-fade-left">
+                <div className="w-full lg:max-w-[800px]  backdrop-blur-sm bg-white/70 rounded-lg shadow-md p-6 animate-fade-left">
                     <h2 className="text-2xl font-bold text-[#eb5e28] mb-4">Contact Form</h2>
 
                     <form className="flex flex-col">

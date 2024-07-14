@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Contact.css'
 const Contact = () => {
+    useEffect(() => {
+        sessionStorage.setItem("setPageName", '/contact');
+    }, [])
 
     const navigate = useNavigate();
     const goto = (e) => {
         const value = e.target.value;
+        sessionStorage.removeItem('setPageName');
         sessionStorage.setItem('setPageName', value);
         console.log(value);
-        navigate('/' + value)
+        navigate('/' + value);
     }
     return (
         <>
@@ -35,7 +39,7 @@ const Contact = () => {
 
             </section>
 
-            <div className='hidden lg:block'>
+            {/* <div className='hidden lg:block'>
                 <div className='absolute top-0 flex  h-lvh justify-end items-center right-20  '>             
                     <button className="button" onClick={goto} value="" >
                     <div className="line one">
@@ -92,7 +96,7 @@ const Contact = () => {
                     </div>
                 </button>
                 </div>
-            </div>
+            </div> */}
 
         </>
     )

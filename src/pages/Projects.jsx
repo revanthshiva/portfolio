@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import raeImg from '../assets/rae.png'
 import ecarImg from '../assets/ecar.png'
 import hospitalImg from '../assets/hospital.png'
 import { useNavigate } from 'react-router-dom'
 import './Projects.css'
 const Projects = () => {
+  useEffect(() => {
+    sessionStorage.setItem("setPageName", '/projects');
+  }, [])
+
   const navigate = useNavigate();
   const goto = (e) => {
     const value = e.target.value;
+    sessionStorage.removeItem('setPageName');
     sessionStorage.setItem('setPageName', value);
     console.log(value);
-    navigate('/' + value)
+    navigate('/' + value);
   }
   return (
     <>
@@ -87,7 +92,7 @@ const Projects = () => {
 
       </section>
 
-      <div className='hidden lg:block'>
+      {/* <div className='hidden lg:block'>
         <div className='absolute top-0 flex  h-lvh justify-end items-center right-20  '>
           <button className="button" onClick={goto} value="about" >
             <div className="line one">
@@ -145,7 +150,7 @@ const Projects = () => {
           </button>
         </div>
 
-      </div>
+      </div> */}
 
 
 

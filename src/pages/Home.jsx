@@ -147,7 +147,7 @@ const Home = () => {
 
 
 
-      <div className='hidden lg:block'>
+      {/* <div className='hidden lg:block'>
         <div className='absolute top-0 flex h-lvh justify-end items-center right-20  '>
           <button className="button" onClick={goto} value="projects" >
             <div className="line one">
@@ -204,7 +204,7 @@ const Home = () => {
             </div>
           </button>
         </div>
-      </div>
+      </div> */}
 
     </>
   )

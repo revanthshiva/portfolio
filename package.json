@@ -1,5 +1,5 @@
 {
-  "homepage": "https://revanthshiva.github.io/portfolio",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "homepage": "https://revanthshiva.github.io/portfolio",
   "dependencies": {
     "gh-pages": "^6.1.1",
     "react": "^18.3.1",

@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 const About = () => {
+    const navigate = useNavigate();
     const goto = (e) => {
         const value = e.target.value;
-        sessionStorage.removeItem('setPageName');
         sessionStorage.setItem('setPageName', value);
         console.log(value);
-        window.location.href = (value);
-
+        navigate('/' + value)
     }
     return (
         <>

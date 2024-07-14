@@ -1,18 +1,22 @@
 import React, { useEffect } from 'react'
 import './Home.css'
 import MyPic from '../assets/me.png'
-import Logo from '/sitelogo.png'
-import { Link } from 'react-router-dom'
+import Logo from '../assets/sitelogo.png'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
+  useEffect(() => {
+    sessionStorage.setItem("setPageName", '/');
+  }, [])
+
+  const navigate = useNavigate();
   const goto = (e) => {
     const value = e.target.value;
     sessionStorage.removeItem('setPageName');
     sessionStorage.setItem('setPageName', value);
     console.log(value);
-    window.location.href = (value);
-
+    navigate('/'+ value);
   }
 
   return (
@@ -33,7 +37,7 @@ const Home = () => {
           </div>
 
           <div className='mt-12 lg:flex lg:gap-5 hidden'>
-            <Link to='https://github.com/revanthshiva'
+            <a href='https://github.com/revanthshiva'
               className=" group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-neutral-900 px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden after:absolute after:z-10 after:w-12 after:h-12 after:content[''] after:bg-sky-900 after:-left-8 after:top-8 after:rounded-full after:blur-lg hover:after:animate-pulse"
             >
               <svg
@@ -52,9 +56,9 @@ const Home = () => {
                 ></path>
               </svg>
               Github
-            </Link>
-            <Link
-              to='/RevanthShiva.pdf'
+            </a>
+            <a
+              href='/RevanthShiva.pdf'
               target='_blank'
               className=" cursor-pointer group flex justify-center items-center gap-2 relative bg-neutral-900 px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden duration-500 hover:border-neutral-900 hover:underline hover:underline-offset-4 hover:text-neutral-300 hover:decoration-2">
               <svg className="w-6 h-6 fill-neutral-50"
@@ -69,7 +73,7 @@ const Home = () => {
                 <path
                   className="svg-fill-primary" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" /></svg>
               Download CV
-            </Link>
+            </a>
 
 
 

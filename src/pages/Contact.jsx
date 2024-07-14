@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Contact.css'
 const Contact = () => {
+
+    const navigate = useNavigate();
     const goto = (e) => {
         const value = e.target.value;
-        sessionStorage.removeItem('setPageName');
         sessionStorage.setItem('setPageName', value);
         console.log(value);
-        window.location.href = (value);
-
+        navigate('/' + value)
     }
     return (
         <>
@@ -37,7 +37,7 @@ const Contact = () => {
 
             <div className='hidden lg:block'>
                 <div className='absolute top-0 flex  h-lvh justify-end items-center right-20  '>             
-                    <button className="button" onClick={goto} value="/" >
+                    <button className="button" onClick={goto} value="" >
                     <div className="line one">
                         <div className="round"></div>
                         <div className="round"></div>

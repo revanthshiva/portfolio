@@ -2,16 +2,15 @@ import React from 'react'
 import raeImg from '../assets/rae.png'
 import ecarImg from '../assets/ecar.png'
 import hospitalImg from '../assets/hospital.png'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './Projects.css'
 const Projects = () => {
+  const navigate = useNavigate();
   const goto = (e) => {
     const value = e.target.value;
-    sessionStorage.removeItem('setPageName');
     sessionStorage.setItem('setPageName', value);
     console.log(value);
-    window.location.href = (value);
-
+    navigate('/' + value)
   }
   return (
     <>

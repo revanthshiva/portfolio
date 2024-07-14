@@ -10,7 +10,7 @@ const Header = () => {
     };
 
 
-    const [pageName, setPageName] = useState('');
+    const [pageName, setPageName] = useState('Loading...');
 
     useEffect(() => {
         const getPageName = sessionStorage.getItem('setPageName');
@@ -19,13 +19,13 @@ const Header = () => {
             case '/' :
                 setPageName('Portfolio')
                 break
-            case 'projects' :
+            case '/projects' :
                 setPageName('Spotlight')
                 break
-            case 'about' :
+            case '/about' :
                 setPageName('About')
                 break
-            case 'contact' :
+            case '/contact' :
                 setPageName('Contact')
                 break
             default :
